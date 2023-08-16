@@ -1,0 +1,726 @@
+/* CSS reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Get rid of all the margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit; /* gets rid of all the defaul font sizes and font weights */
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* general */
+
+html {
+  font-family: 'Playfair Display', serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.line-between {
+  height: 2px;
+  background-color: rgba( 56, 185, 150, 0.45 );
+  margin: 10px 500px;
+}
+
+/* navbar */
+
+.logo-main {
+  position: fixed;
+  top: 0px;
+  left: 5rem;
+}
+
+#primary-header {
+  height: 56px;
+  z-index: 10000;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.primary-head {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.primary-nav {
+  margin-right: 5rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.primary-nav > li {
+  list-style: none;
+  height: 56px;
+  padding-top: 14px;
+}
+
+.primary-nav a {
+  color: white;
+  text-shadow: 2px 2px 3px #000;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.primary-nav li ul {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  list-style: none;
+  display: none;
+  top: 100%;
+  left: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+
+.primary-nav li:hover ul {
+  display: block;
+}
+
+/*.primary-nav li ul li {
+  width: 100%;
+  border: none;
+}*/
+
+.primary-nav li ul li a {
+  padding: 10px 20px;
+  display: block;
+  /*color: white;*/
+  /*text-decoration: none;*/
+}
+
+
+.primary-nav li ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* language switcher */
+
+.flag {
+  width: auto;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+/* hover effect nav */
+
+.primary-nav a:before,
+.primary-nav a:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.primary-nav a:before{
+  top: 0;
+  transform: translateY(10px);
+}
+
+.primary-nav a:after{
+  bottom: 0;
+  transform: translateY(-10px);
+}
+
+.primary-nav a:hover:before,
+.primary-nav a:hover:after{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* hero */
+
+.hero {
+  background-image: url(img/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(201, 185, 185);
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: white;
+  text-shadow: 2px 2px 3px #000;
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  text-align: center;
+}
+
+.hero-content li {
+  list-style: none;
+  font-size: 32px;
+  text-align: center;
+}
+
+.contact-button {
+  background-color: rgba(56, 185, 150, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 20px; /* Adjust padding to make the button less wide */
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  max-width: 200px; /* Set a maximum width for the button */
+  text-align: center; /* Center the button text */
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 auto; /* Add this line to center the button */
+}
+
+.contact-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  background-color: rgba(46, 155, 125, 0.8); /* Darker shade on hover */
+}
+
+/* bio */
+
+#about_us {
+  background-image: url(img/bio_background.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(201, 185, 185);
+  background-blend-mode: multiply;
+  padding-top: 56px;
+}
+
+.section-header {
+  color: white;
+  font-size: 56px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.section-text {
+  max-width: 1200px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 32px;
+}
+
+.bio-container {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.bio {
+  background: rgba( 248, 222, 222, 0.55 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 35%;
+  gap: 2rem;
+  align-items: center;
+
+}
+
+.bio-photo {
+  width: 200px;
+  height: 200px;
+}
+
+.bio-photo img {
+  border-radius: 50%;
+}
+
+.bio-text {
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.bio-button {
+  background-color: rgba(56, 185, 150, 0.8);
+  border: none;
+  border-radius: 10px; /* Adjust the radius as desired */
+  padding: 8px 16px; /* Adjust the padding as desired */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+.bio-button:hover {
+  background-color: rgba(46, 155, 125, 0.8); /* Darker background on hover */
+}
+
+.bio-button a {
+  text-decoration: none; /* Remove text underline */
+  color: white; /* Inherit the text color from parent */
+}
+
+/*bio subpage */
+
+#about_us_subpage {
+  background-image: url(img/bio_background_rotated.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(201, 185, 185);
+  background-blend-mode: multiply;
+  padding-top: 56px;
+}
+
+.bio-subpage {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-sub-photo img {
+  height: 300px;
+  border-radius: 50%;
+}
+
+.bio-sub-text {
+  font-size: 24px;
+  padding-left: 5rem;
+}
+
+.bio-sub-main-text {
+  max-width: 1200px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 32px;
+}
+
+
+/* therapy */
+
+#therapy {
+  background-image: url(img/therapy_background.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(201, 185, 185);
+  background-blend-mode: multiply;
+  /*background-color: aliceblue;
+  height: 100vh;
+  width: 100%; */
+  padding-top: 56px;
+}
+
+.therapy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.therapy-column {
+  /*background: rgba( 248, 222, 222, 0.55 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.therapy-icon {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.therapy-icon:hover {
+  transform: scale(1.05); /* Scale the icon when hovered */
+}
+
+.therapy-icon img {
+  height: auto;
+  max-width: 300px;
+}
+
+.therapy-icon-link {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* contact */
+
+#contact {
+  padding-top: 56px;
+  background-image: url(img/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(201, 185, 185);
+  background-blend-mode: multiply;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  align-items: center;
+  text-align: center;
+
+  background: rgba( 56, 185, 150, 0.45 );
+  box-shadow: 0 8px 32px 0 rgba(17, 83, 86, 0.37);
+  backdrop-filter: blur( 6.5px );
+  -webkit-backdrop-filter: blur( 6.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 20px; /* Set the desired padding */
+}
+
+.contact-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.contact-column-header {
+  font-size: 24px;
+  color: white;
+  padding: 2rem;
+}
+
+.contact-text {
+  color: white;
+  font-size: 20px;
+  padding: 2rem;
+}
+
+/* footer */
+.footer {
+  background-color: rgba(0, 0, 0, 0.7);;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+/* responsive design */
+
+
+@media (max-width: 1210px) {
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-column {
+    width: 500px;
+  }
+
+  .bio-container {
+    flex-direction: column;
+  }
+
+  .therapy-icon img {
+    height: auto;
+    max-width: 250px;
+  }
+ 
+}
+
+@media (max-width: 950px) {
+  .logo-main {
+    left: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content li {
+    font-size: 24px;
+  }
+
+  .section-header {
+    font-size: 42px;
+  }
+  
+  .section-text {
+    font-size: 16px;
+  }
+
+  .therapy-container {
+    flex-direction: column;
+  }
+
+  .contact-column {
+    width: 400px;
+  }
+
+  .contact-column-header {
+    font-size: 24px;
+  }
+
+  .contact-text {
+    font-size: 18px;
+  }
+
+  .bio-text {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  .primary-nav {
+    position: fixed; /* Position the navigation menu fixed */
+    top: 56px;
+    left: 0;
+    width: 100%; /* Take the full width of the viewport */
+    height: 100%; /* Take the full height of the viewport */
+    background: rgba(0, 0, 0, 0.7);
+    /*background: url(img/background_menu_phone.svg);
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply; rgba(0, 0, 0, 0.7) */
+    min-height: 100vh;
+    border-radius: 0; /* Remove border radius */
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem; /* Add some padding for spacing */
+    align-items: center;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out ;
+  }
+
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    background: url(img/menu_white.png);
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 0.8rem;
+    right: 1rem;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background: url(img/x_white.png);
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 0.8rem;
+    right: 1rem;
+  }
+
+  .flag {
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .logo-main {
+    left: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content li {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 490px) {
+  .logo-main {
+    left: 1rem;
+  }
+
+  .section-header {
+    font-size: 36px;
+  }
+
+  .hero-content {
+    padding-bottom: 50px;
+  }
+  .hero-content ul {
+    padding-bottom: 50px;
+  }
+
+  .bio-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bio-text {
+    font-size: 20px;
+  }
+
+  .bio {
+    width: 250px;
+  }
+
+  .therapy-icon img {
+    height: auto;
+    max-width: 200px;
+  }
+
+  .contact-column {
+    width: 300px;
+  }
+
+  .contact-column-header {
+    font-size: 24px;
+  }
+
+  .contact-text {
+    font-size: 18px;
+  }
+
+}
