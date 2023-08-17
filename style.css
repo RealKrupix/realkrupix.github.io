@@ -80,7 +80,8 @@ html {
 .line-between {
   height: 2px;
   background-color: rgba( 56, 185, 150, 0.45 );
-  margin: 10px 500px;
+  width: 60%; /* Set the width to 60% */
+  margin: 10px auto; /* Center the line horizontally */
 }
 
 /* navbar */
@@ -359,8 +360,19 @@ html {
 
 /*bio subpage */
 
-#about_us_subpage {
+#about_us_subpage_2 {
   background-image: url(img/bio_background_rotated.svg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(201, 185, 185);
+  background-blend-mode: multiply;
+  padding-top: 56px;
+}
+
+#about_us_subpage {
+  background-image: url(img/bio_background.svg);
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -386,6 +398,7 @@ html {
 .bio-sub-text {
   font-size: 24px;
   padding-left: 5rem;
+  padding-top: 2rem;
 }
 
 .bio-sub-main-text {
@@ -568,6 +581,46 @@ html {
 }
 
 @media (max-width: 950px) {
+
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .bio-sub-photo img {
+    height: 200px;
+  }
+
+  .bio-sub-text {
+    font-size: 18px;
+    padding-left: 0;
+  }
+  
+  .bio-sub-main-text {
+    font-size: 16px;
+  }
+
+  #about_us {
+    background-attachment: scroll;
+  }
+
+  #therapy {
+    background-attachment: scroll;
+  }
+
+  #contact {
+    background-attachment: scroll;
+  }
+
+  #about_us_subpage_2 {
+    background-image: url(img/bkgr_therapy.svg);
+    background-attachment: scroll;
+  }
+
+  #about_us_subpage {
+    background-image: url(img/bkgr_therapy.svg);
+    background-attachment: scroll;
+  }
+
   .logo-main {
     left: 3rem;
   }
