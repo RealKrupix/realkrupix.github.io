@@ -246,7 +246,7 @@ html {
   color: white;
   border: none;
   padding: 8px 20px; /* Adjust padding to make the button less wide */
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 5px;
   max-width: 200px; /* Set a maximum width for the button */
@@ -298,6 +298,7 @@ html {
 
 .bio-container {
   display: flex;
+  flex-direction: row-reverse;
   gap: 5rem;
   justify-content: center;
   align-items: center;
@@ -429,6 +430,10 @@ html {
   padding-top: 56px;
 }
 
+.white-text {
+  color: white;
+}
+
 .therapy-container {
   display: flex;
   justify-content: center;
@@ -511,6 +516,7 @@ html {
   flex-basis: 30%;
   align-items: center;
   text-align: center;
+  height: 400px;
 
   background: rgba( 56, 185, 150, 0.45 );
   box-shadow: 0 8px 32px 0 rgba(17, 83, 86, 0.37);
@@ -518,12 +524,13 @@ html {
   -webkit-backdrop-filter: blur( 6.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-  padding: 20px; /* Set the desired padding */
+  padding: 20px;
 }
 
 .contact-icon img {
   width: 36px;
   height: 36px;
+  margin-top: 2rem;
 }
 
 .contact-column-header {
@@ -536,6 +543,38 @@ html {
   color: white;
   font-size: 20px;
   padding: 2rem;
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+  padding: 5px; /* Adjust the padding value as needed */
+  border-radius: 5px;
+}
+
+/* Style placeholders */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  padding: 5px; /* Adjust the padding value as needed */
+  color: #999; /* Adjust the color as needed */
+}
+
+.contact-form button[type="submit"] {
+  margin-top: 10px;
+  width: 150px;
+  height: 40px;
+  border: none;
+  background-color: rgba(192, 198, 196, 0.8);
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* footer */
@@ -554,8 +593,14 @@ html {
 
 /* responsive design */
 
+@media (max-width: 1460px) {
+  .therapy-icon img {
+    height: auto;
+    max-width: 250px;
+  }
+}
 
-@media (max-width: 1210px) {
+@media (max-width: 1260px) {
 
   .hero-content h1 {
     font-size: 48px;
@@ -573,10 +618,10 @@ html {
     flex-direction: column;
   }
 
-  .therapy-icon img {
-    height: auto;
-    max-width: 250px;
+  .therapy-container {
+    flex-direction: column;
   }
+
  
 }
 
@@ -639,10 +684,6 @@ html {
   
   .section-text {
     font-size: 16px;
-  }
-
-  .therapy-container {
-    flex-direction: column;
   }
 
   .contact-column {

@@ -32,7 +32,8 @@
                         <li><a href="mission.html">Our mission</a></li>
                         <li><a href="individual_therapy.html">Individual therapy</a></li>
                         <li><a href="couples_therapy.html">Counselling and therapy for couples</a></li>
-                        <li><a href="supervision.html">Supervision</a></li>
+                        <li><a href="supervision.html">Research-based supervision</a></li>
+                        <li><a href="supervision_2.html">Group supervision: loss and grief</a></li> 
                     </ul>
                 </li>
                 <li><a href="#contact">Contact</a></li>
@@ -58,7 +59,7 @@
                     <li>through life transitions</li>
                 </ul>
                 <button class="contact-button">
-                    <a href="#contact">Schedule now</a>
+                    <a href="#contact">Contact us</a>
                 </button>
             </div>
         </div>
@@ -71,14 +72,17 @@
             <div class="line-between"></div>
 
             <div class="section-text">
-                <p>Bernadetta Janusz and Anssi Peräkylä are psychotherapists, researchers and university professors. They offer individual and couple therapy along with supervision and workshops. The key idea of their work is combining clinical insights and research to understand connections between people.</p>
+                <p>Bernadetta Janusz and Anssi Peräkylä are psychotherapists, researchers and university professors. They offer individual and couple therapy along with supervision and workshops. In their work they combine clinical insights and research to understand connections between people.
+                    <br>Particularly, they focus on re-connecting: establishing connections again after crisis, loss, and life transitions.
+                </p>
             </div>
 
+            
             <div class="bio-container">
                 <div class="bio">   
                     <div class="bio-photo"><img src="img/Ansi_square.jpg" alt="Photo of Anssi Peräkylä"></div>
                     <div class="bio-text">
-                        <h2>Prof. Anssi Peräkylä</h2>
+                        <h2>Anssi Peräkylä</h2>
                     </div>
                     <button class="bio-button">
                         <a href="bio_anssi.html">Read more</a>
@@ -88,7 +92,7 @@
                 <div class="bio">   
                     <div class="bio-photo"><img src="img/benia_square.JPG" alt="Photo of Bernadetta Janusz"></div>
                     <div class="bio-text">
-                        <h2>Prof. Bernadetta Janusz</h2>
+                        <h2>Bernadetta Janusz</h2>
                     </div>
                     <button class="bio-button">
                         <a href="bio_benia.html">Read more</a>
@@ -99,10 +103,15 @@
 
         <section id="therapy">
             <div class="section-header">
-                <h1>Therapy</h1>
+                <h1>Psychotherapy and supervision</h1>
             </div>
 
             <div class="line-between"></div>
+
+            <div class="section-text white-text">
+                <p>Our work enhances processes of re-connection in emotional and relational problems, after loss, in complicated or prolonged grief, an in major life changes.
+                </p>
+            </div>
 
             <div class="therapy-container">
 
@@ -124,6 +133,13 @@
                     <div class="therapy-column">
                         <div class="therapy-icon">
                             <img src="img/supervision.png" alt="Research-based group supervision">
+                        </div>
+                    </div>
+                </a>
+                <a href="supervision_2.html" class="therapy-icon-link">
+                    <div class="therapy-column">
+                        <div class="therapy-icon">
+                            <img src="img/supervision_2.png" alt="Research-based group supervision">
                         </div>
                     </div>
                 </a>
@@ -154,18 +170,17 @@
                 </div>
 
                 <div class="contact-column">
-                    <div class="contact-icon">
-                        <img src="img/phone.svg" alt="Phone number">
-                    </div>
-                    <div class="contact-column-header">
-                        <h2>Phone number</h2>
-                    </div>
-                    <div class="contact-text">
-                        <p>
-                            Mon - Fri 9:00 AM - 5:00 PM <br>
-                            +48-111-222-333
-                        </p>
-                    </div>
+                    <form class="contact-form" onsubmit="sendEmail(); reset(); return false;">
+                        <div class="contact-column-header">
+                            <h2>Get in touch with us!</h2>
+                        </div>
+                        <input type="text" id="name" placeholder="Name">
+                        <input type="text" id="email" placeholder="Email">
+                        <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                        <div class="button-container">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
                 </div>
             
 
@@ -194,6 +209,7 @@
 
 
     </main>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="script.js"></script>   
 </body>
 </html>

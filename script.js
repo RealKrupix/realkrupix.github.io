@@ -53,6 +53,22 @@ navElements.forEach(navElement => {
 });
 
 
+function sendEmail() {
+  Email.send({
+    SecureToken: "85c02d4f-15b7-4ceb-941c-dd3d030593d9",
+    To : 'konopskajulia6@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "Testujemy wariata",
+    Body : "Name: " + document.getElementById("name").value 
+          + "<br> Email: " + document.getElementById("email").value
+          + "<br> Message: " + document.getElementById("message").value
+}).then(
+  message => alert("Message send successfully")
+);
+
+
+} 
+
 
 
 
