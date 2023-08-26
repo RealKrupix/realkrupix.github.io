@@ -760,6 +760,10 @@ html {
     font-size: 16px;
   }
 
+  #news {
+    background-attachment: scroll;
+  }
+
   #about_us {
     background-attachment: scroll;
   }
