@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
     <header id="primary-header" class=" primary-head">
@@ -21,6 +22,7 @@
     
         <nav>
             <ul id="primary-navigation" class="primary-nav" data-visible="false">
+                <li><a href="#news">Aktualności</a></li>
                 <li><a href="#about_us">O nas</a>
                     <ul>
                         <li><a href="bio_anssi_pl.html">Anssi Peräkylä</a></li>
@@ -63,6 +65,56 @@
                 </button>
             </div>
         </div>
+
+        <section id="news">
+            <div class="section-header">
+                <h1>Aktualności</h1>
+            </div>
+
+            <div class="line-between"></div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> 
+                        <div class="news-post">   
+                            <div class="news-photo"></div>
+                            <div class="news-text-header">
+                                <h2>Witamy w Reconnect Therapy!</h2>
+                            </div>
+                            <div class="date">
+                                <p>20.08.2023</p>
+                            </div>
+                            <div class="news-text">
+                                <p>Chcemy by to miejsce stało się bezpieczną przestrzenią dla osób, które znajdują się w trudnej sytuacji życiowej i poszukują pomocy, jak i przestrzenią umożliwiającą rozwój dla innych terapeutów i psychologów. Zapraszamy do zapoznania się z oferowanymi przez nas formami pomocy i superwizji oraz do bezpośredniego kontaktu.</p>
+                            </div>
+                            <button class="news-button">
+                                <a href="#contact">Napisz do nas</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="news-post">   
+                            <div class="news-photo"></div>
+                            <div class="news-text-header">
+                                <h2>Obniżone ceny terapii dla uchodźców w trudnej sytuacji finansowej</h2>
+                            </div>
+                            <div class="date">
+                                <p>26.08.2023</p>
+                            </div>
+                            <div class="news-text">
+                                <p>Jeśli znajdujesz się w trudnej sytuacji życiowej i potrzebujesz pomocy terapeutycznej, skontaktuj się z nami. Oferujemy terapię w obniżonych stawkach dla osób uchodźczych.</p>
+                            </div>
+                            <button class="news-button">
+                                <a href="#contact">Napisz do nas</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            
+        </section>
 
         <section id="about_us">
             <div class="section-header">
@@ -155,25 +207,24 @@
                     </div>
                     <div class="contact-text">
                         <p>
-                            bernadetta.e.janusz@gmail.com <br>
-                            anssi.perakyla@helsinki.fi
+                            bernadetta@reconnect-therapy.pl <br>
+                            anssi@reconnect-therapy.pl
                         </p>
                     </div>
                 </div>
 
                 <div class="contact-column">
-                    <div class="contact-icon">
-                        <img src="img/phone.svg" alt="Phone number">
-                    </div>
-                    <div class="contact-column-header">
-                        <h2>Numer telefonu</h2>
-                    </div>
-                    <div class="contact-text">
-                        <p>
-                            Pon - Pt 9:00 - 17:00<br>
-                            +48-111-222-333
-                        </p>
-                    </div>
+                    <form class="contact-form" onsubmit="sendEmail(); reset(); return false;">
+                        <div class="contact-column-header">
+                            <h2>Skontaktuj się z nami!</h2>
+                        </div>
+                        <input type="text" id="name" placeholder="Imię">
+                        <input type="text" id="email" placeholder="Email">
+                        <textarea id="message" rows="4" placeholder="Jak możemy Ci pomóc?"></textarea>
+                        <div class="button-container">
+                            <button type="submit">Wyślij</button>
+                        </div>
+                    </form>
                 </div>
             
 
@@ -202,6 +253,7 @@
 
 
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>   
 </body>
 </html>
