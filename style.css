@@ -72,6 +72,7 @@ video {
 html {
   /*font-family: 'Raleway', sans-serif;*/
   font-family: 'Playfair Display', serif;
+  letter-spacing: 0.4;
 }
 
 .flex {
@@ -85,11 +86,22 @@ html {
   margin: 10px auto; /* Center the line horizontally */
 }
 
+.breadcrumb {
+  max-width: 1200px;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
 /* navbar */
 
 .logo-main {
+  height: 36px;
+  width: auto;
   position: fixed;
-  top: 0px;
+  top: 8px;
   left: 5rem;
 }
 
@@ -147,16 +159,9 @@ html {
   display: block;
 }
 
-/*.primary-nav li ul li {
-  width: 100%;
-  border: none;
-}*/
-
 .primary-nav li ul li a {
   padding: 10px 20px;
   display: block;
-  /*color: white;*/
-  /*text-decoration: none;*/
 }
 
 
@@ -211,7 +216,7 @@ html {
 /* hero */
 
 .hero {
-  background-image: url(img/background.jpg);
+  background-image: url(img/background_enhanced.jpg);
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
@@ -470,7 +475,7 @@ html {
 #about_us_subpage_2 {
   background-image: url(img/bio_background_rotated.svg);
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   min-height: 100vh;
   width: 100%;
   background-color: rgb(201, 185, 185);
@@ -481,7 +486,7 @@ html {
 #about_us_subpage {
   background-image: url(img/bio_background.svg);
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   min-height: 100vh;
   width: 100%;
   background-color: rgb(201, 185, 185);
@@ -504,7 +509,8 @@ html {
 
 .bio-sub-text {
   font-size: 24px;
-  padding-left: 5rem;
+  text-align: center;
+  /*padding-left: 5rem;*/
   padding-top: 2rem;
 }
 
@@ -595,7 +601,7 @@ html {
 
 #contact {
   padding-top: 56px;
-  background-image: url(img/background.jpg);
+  background-image: url(img/background_enhanced.jpg);
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -665,7 +671,6 @@ html {
   border-radius: 5px;
 }
 
-/* Style placeholders */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   padding: 5px; /* Adjust the padding value as needed */
@@ -691,16 +696,51 @@ html {
 
 /* footer */
 .footer {
-  background-color: rgba(0, 0, 0, 0.7);;
-  color: white;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
 }
 
 .footer-text {
-  font-size: 14px;
+  color: gray;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10rem;
+}
+.footer-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-column li {
+  list-style: none;
+}
+
+.footer-column li a {
+  text-decoration: none;
+  color: gray;
+}
+
+.footer-copy {
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-logo img {
+  height: 36px;
+  width: auto;
 }
 
 /* responsive design */
@@ -737,7 +777,16 @@ html {
  
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
+
+  .footer-logo img {
+    height: 24px;
+    width: auto;
+  }
+
+}
+
+@media (max-width: 960px) {
 
   .contact-button {
     font-size: 16px;;
@@ -830,9 +879,6 @@ html {
     width: 100%; /* Take the full width of the viewport */
     height: 100%; /* Take the full height of the viewport */
     background: rgba(0, 0, 0, 0.7);
-    /*background: url(img/background_menu_phone.svg);
-    background-color: rgba(0, 0, 0, 0.7);
-    background-blend-mode: multiply; rgba(0, 0, 0, 0.7) */
     min-height: 100vh;
     border-radius: 0; /* Remove border radius */
     flex-direction: column;
@@ -874,12 +920,30 @@ html {
     margin-left: 0;
   }
 
-.swiper-button-next,
-.swiper-button-prev {
-  display: block;
-  width: 30px !important;
-  height: 30px !important;
-}
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem;
+  }
+
+  .footer-columns {
+    gap: 5rem;
+    margin-left: 110px;
+  }
 
 }
 
@@ -896,6 +960,13 @@ html {
     font-size: 18px;
   }
 
+  .footer-columns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 0px;
+  }
 
 
 }
