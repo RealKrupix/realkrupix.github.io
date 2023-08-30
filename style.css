@@ -95,6 +95,11 @@ html {
   padding-right: 32px;
 }
 
+.breadcrumb p a {
+  text-decoration: none;
+  color: black;
+}
+
 /* navbar */
 
 .logo-main {
@@ -557,6 +562,16 @@ html {
   padding-bottom: 2rem;
 }
 
+.therapy-container_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+}
+
 .therapy-column {
   /*background: rgba( 248, 222, 222, 0.55 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -767,10 +782,14 @@ html {
   }
 
   .bio-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .therapy-container {
+    flex-direction: column;
+  }
+
+  .therapy-container_2 {
     flex-direction: column;
   }
 
