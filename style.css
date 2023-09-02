@@ -751,6 +751,9 @@ html {
 .footer-copy {
   text-align: center;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .footer-logo img {
